@@ -5,7 +5,7 @@
        <Head/>
     <!-- end head -->
     <div class="left_content">
-        <p>Heavy Rain</p>
+        <leftContent/>
     </div>
     <!-- left footer -->
     <leftFooter/>
@@ -17,10 +17,12 @@
 <script>
 import Head from './Head.vue';
 import leftFooter from './left-footer.vue';
+import leftContent from './left_content.vue';
 export default {
 components:{
     Head,
-    leftFooter
+    leftFooter,
+    leftContent
 },
 data(){
     return{

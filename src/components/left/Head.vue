@@ -49,7 +49,7 @@ methods:{
         },
         selectCity(city) {
             // Handle the selection of a city (you can customize this method as per your requirement)
-            console.log('Selected city:', city.name);
+            // console.log('Selected city:', city.name);
             this.CityName = city.name;
             this.suggestions = [];
             this.ChangeCityName();  
@@ -73,15 +73,17 @@ mounted(){
         list-style-type: none;
         padding: 0;
         margin: 0;
+        background-color: rgba(77, 98, 99, 0.32);
+        backdrop-filter: blur(3px);
+        border-radius: 20px;
 
     }
     #suggestions li {
-        padding: 5px;
+        padding: 10px;
         cursor: pointer;
     }
     #suggestions li:hover {
-        background-color: rgba(77, 98, 99, 0.42);
-        backdrop-filter: blur(3px); 
+        background-color: #565a5aaf;
         border-radius: 8px;
        }
 </style>

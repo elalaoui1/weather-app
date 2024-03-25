@@ -6,7 +6,8 @@
     font-style: normal; }
 .main{
     height: 100dvh;
-    background-image:linear-gradient(to bottom,transparent,rgba(0, 0, 0, 0.6)), url("../img/dark/valentin-muller-bWtd1ZyEy6w-unsplash.jpg");
+    /* background-image:linear-gradient(to bottom,transparent,rgba(0, 0, 0, 0.6)), url("../img/dark/valentin-muller-bWtd1ZyEy6w-unsplash.jpg"); */
+    background-image:linear-gradient(to bottom,transparent,rgba(0, 0, 0, 0.6)), url("../img/dark/jr-korpa-351cPhSfl6g-unsplash.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -21,18 +22,178 @@
             position: relative;
             display: flex;
             height: 65%;
-            justify-content: end;
-            align-items: end;
+            padding: 10px 20px 0px 20px;
+            
+            /* justify-content: end; */
+            /* align-items: end; */
 
+            .today_highlights{
+                background-color: rgba(77, 98, 99, 0.12);
+                backdrop-filter: blur(3px);
+                width: 168dvh;
+                height: 50dvh;
+                border-radius: 20px;
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                & h3{
+                    font-size: 20px;
+                    font-weight: 500;
+                    color:  rgba(231, 228, 228, 0.604);
+                    text-transform: capitalize;
+                }
+                    .divone{
+                    display: flex;
+                    gap: 10px;
+
+                    .air_quality{
+                        background-color: rgba(77, 98, 99, 0.12);
+                        backdrop-filter: blur(3px);
+                        height: 150px;
+                        border-radius: 20px;
+                        flex: 1; 
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        justify-content: center;
+
+                        & h6{
+                            padding-left: 30px;
+                            font-size: 17px;
+                            font-weight: 500;
+                            color:  rgba(231, 228, 228, 0.504);
+                            text-transform: capitalize;
+                        }
+                        .air_quality_details{
+                            padding: 20px 30px ;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-evenly;
+
+                            & i{
+                                font-size: 30px;
+                                color: rgba(214, 214, 214, 0.918);
+                            }
+                            & ruby{
+                                font-size: 25px;
+                                font-weight: 500;
+                                color: rgba(214, 214, 214, 0.918);
+
+                            }
+                        }
+                    }
+                    .sunrise_sunset{
+                        display: flex;
+                        flex: 1;
+                        background-color: rgba(77, 98, 99, 0.12);
+                        backdrop-filter: blur(3px);
+                        border-radius: 20px;
+                        flex-direction: column;
+                        gap: 20px;
+                        justify-content: center;
+                        & h6{
+                            padding-left: 30px;
+                            font-size: 17px;
+                            font-weight: 500;
+                            color:  rgba(231, 228, 228, 0.504);
+                            text-transform: capitalize;
+                        }
+                        .sunrise_sunset_details{
+                            padding: 20px 30px ;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-evenly;
+
+                            .sunrise {
+                                display: flex;
+                                gap: 15px;
+                                & i{
+                                    font-size: 35px;
+                                    color: rgba(214, 214, 214, 0.918);
+                                }
+                                & ruby{
+                                    font-size: 25px;
+                                    font-weight: 500;
+                                    color: rgba(214, 214, 214, 0.918);
+    
+                                }
+                            }
+                            .sunset{
+                                display: flex;
+                                gap: 15px;
+                                & i{
+                                    font-size: 30px;
+                                    color: rgba(214, 214, 214, 0.918);
+                                }
+                                & ruby{
+                                    font-size: 25px;
+                                    font-weight: 500;
+                                    color: rgba(214, 214, 214, 0.918);
+    
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .divtwo {
+                    display: flex;
+                    gap: 10px;
+
+
+                    .all {
+                        flex: 1; 
+                        background-color: rgba(77, 98, 99, 0.12);
+                        backdrop-filter: blur(3px);
+                        height: 100px;
+                        border-radius: 20px;
+
+                        & h6{
+                            padding-top: 10px;
+                            padding-left: 30px;
+                            font-size: 17px;
+                            font-weight: 500;
+                            color:  rgba(231, 228, 228, 0.504);
+                            text-transform: capitalize;
+                        }
+
+                        & div{
+                            display: flex;
+                            gap: 15px;
+                            padding: 20px 30px ;
+                            justify-content: space-around;
+                            & i{
+                                font-size: 30px;
+                                color: rgba(214, 214, 214, 0.918);
+                            }
+                            & ruby{
+                                font-size: 25px;
+                                font-weight: 500;
+                                color: rgba(214, 214, 214, 0.918);
+
+                            }
+                        }
+                    }
+                }
+                
+               
+            }       
          & p{
-            font-size: 80px;
+            position: absolute;
+            bottom: -30px;
+            right: 0;
+            font-size: 35px;
             padding-bottom: 40px;
             padding-right: 20px;
             background-image: linear-gradient(to bottom, rgba(231, 228, 228, 0.904), rgba(168, 168, 168, 0));
-            background-clip: text;
+            background-clip: text;  
             color: transparent;
          }
 
+        }
+       
         }
         .left_content::before{
             content: ' ';
@@ -98,40 +259,64 @@
             width: 100%;
             background-color: rgba(77, 98, 99, 0.12);
             backdrop-filter: blur(3px);
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
+            border-radius: 20px;
             & h3{
                 position: absolute;
                 top: 25px;
-                font-size: 20px;
-                text-transform: uppercase ;
+                left: 30px;
+                font-size: 18px;
+                font-weight: 500;
+                text-transform: capitalize ;
             }
-            & p{
-                font-size: 70px;
+            .status{
+                position: absolute;
+                left: 50px;
+                bottom:65px;
+                font-size: clamp(12px,2vw,16px);
                 font-weight: 500;
             }
+            .degree{
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                & p{
+                    font-size: 35px;
+                    font-weight: 500;
+                }
+                & i{
+                    font-size: 70px;
+                }
+            }
+            
             & span {
                 position: absolute;
                 bottom: 25px;
+                left: 50px;
                 display: flex;
+                flex-direction: column;
                 align-items: center;
                 gap: 10px;
-
-                & i{
-                    font-size: 25px;
-                    background-color: rgba(77, 98, 99, 0.7);
-                    padding: 5px 6px ;
-                    border-radius:8px;
-                }
                 &  p{
                     font-size: clamp(12px,2vw,17px);
+                    font-weight: 500;
+
                 }
+                
+            }
+            & span::before{
+                content: ' ';
+                border: 1px solid rgba(168, 167, 167, 0.536);
+                position: absolute;
+                top: -9px;
+                left: 0px;
+                width: 160px;
+
             }
             
         }
     }
     /* end right */
-}/*end main*/
+/*end main*/
 .head{
     width: 99.5%;
     height: 60px;
@@ -141,7 +326,7 @@
     color: white;
     display: flex;
     justify-content: space-between;
-    border-radius: 10px;
+    border-radius: 20px;
     z-index: 100 ;
 }
 .search-box{
@@ -225,7 +410,7 @@
     background-color: rgba(77, 98, 99, 0.12);
     backdrop-filter: blur(3px);
     min-height: 380px;
-    border-radius: 10px;
+    border-radius: 20px;
     
     & h3{
         position: absolute;

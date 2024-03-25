@@ -2,7 +2,6 @@
   
   <div class="next_days_forecast">
         <h3>the next days forecast</h3>
-        <p>{{changecity}}</p>
        
         <div class="next_days">
             <a href="#">5 days</a>
