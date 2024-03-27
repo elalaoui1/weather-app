@@ -3,7 +3,7 @@ import { createStore } from 'vuex';
 export default createStore({
   state() {
     return {
-      cityName: 'dd', 
+      cityName: 'london', 
       apiKey:'9bafddae4156cbd09dc23d6fc4da84be'
     };
   },

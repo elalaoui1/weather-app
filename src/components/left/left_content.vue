@@ -18,12 +18,12 @@
         <div class="sunrise_sunset_details">
             <div class="sunrise">
                 <i class="bi bi-sun"></i>
-                <ruby>6:46aM<rt>sunrise</rt></ruby>
+                <ruby>{{ data.sunrise }} am<rt>sunrise</rt></ruby>
 
             </div>
             <div class="sunset">
                 <i class="bi bi-moon"></i>
-                <ruby>5:39PM<rt>sunset</rt></ruby>
+                <ruby>{{ data.sunset }} pm<rt>sunset</rt></ruby>
 
             </div>
 
@@ -36,7 +36,7 @@
         <div class="humidity_details">
             <i class="bi bi-moisture"></i>
             <ruby>
-                82%
+                {{ data.humidity }}
             </ruby>
         </div>
       </div>
@@ -45,7 +45,7 @@
         <div class="pressure_details">
             <i class="bi bi-water"></i>
              <ruby>
-                1025hPa
+               {{data.pressure}}
             </ruby>
         </div>
       </div>
@@ -54,7 +54,7 @@
         <div class="visibility_details">
             <i class="bi bi-eye"></i>
              <ruby>
-                10km
+                {{data.visibility}}
             </ruby>
         </div>
       </div>
@@ -63,18 +63,54 @@
         <div class="feels_like_details">
             <i class="bi bi-thermometer-half"></i>
              <ruby>
-                2°C
+                {{ data.feelsLike }}
             </ruby>
         </div>
       </div>
     </div>
   </div>
-
   <p>Heavy Rain</p>
 </template>
 
 <script>
-export default {};
+
+import {currentWeather} from '../../functions/Currentweather';
+
+export default {
+
+  data(){
+    return{
+          data:[]
+    }
+  },
+  computed:{
+    changecity() {
+      return this.$store.getters.getCityName;
+    },
+    apikey() {
+      return this.$store.getters.getApiKey;
+    },
+},
+  methods:{
+    async fetchWeather() {
+      currentWeather(this.apikey, this.changecity, (data) => {
+        this.data = data;
+        console.log(this.data);
+      });
+    }
+
+},
+  mounted(){
+    this.fetchWeather();
+    },
+  watch: {
+    '$store.getters.getCityName': {
+      handler: 'fetchWeather', 
+      immediate: true // Call it immediately to ensure it's called initially
+    }
+  }
+
+};
 </script>
 
 <style>

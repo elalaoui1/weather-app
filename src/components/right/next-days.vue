@@ -36,8 +36,7 @@
 export default {
 data(){
     return{
-        city:'london',
-        cnt:2,
+        
     }
 },
 computed: {
@@ -49,27 +48,11 @@ computed: {
     },
 },
 methods:{
-    forecast_for_4_days(){
-        fetch(`https://pro.openweathermap.org/data/2.5/forecast/hourly?q=${this.city}&appid=${this.apikey}`)
-        .then(result=>result.json())
-        .then(data=>console.log('forecast_for_4_days'+data))
-    },
-    current_weather(){
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apikey}`)
-        .then(result=>result.json())
-        .then(data=>console.log('Current_Weather'+data))
-    },
-    Forecast_16_Days(){
-        fetch(`api.openweathermap.org/data/2.5/forecast/daily?q=${this.city}&cnt=${this.cnt}&appid=${this.apikey}`)
-        .then(result=>result.json())
-        .then(data=>console.log('Forecast_16_Days'+data))
-    }
+
     
 },
 mounted(){
-    this.forecast_for_4_days(),
-    this.current_weather(),
-    this.Forecast_16_Days()  
+   
 }
 
 }

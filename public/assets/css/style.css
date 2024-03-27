@@ -24,8 +24,7 @@
             height: 65%;
             padding: 10px 20px 0px 20px;
             
-            /* justify-content: end; */
-            /* align-items: end; */
+            
 
             .today_highlights{
                 background-color: rgba(77, 98, 99, 0.12);
@@ -193,8 +192,8 @@
          }
 
         }
-       
-        }
+
+
         .left_content::before{
             content: ' ';
             border: 1px solid rgba(168, 167, 167, 0.836);
@@ -202,6 +201,7 @@
             bottom: 0px;
             right: 28px;
             width: 95%;
+        }
         }
         .left_footer{
             display: flex;
@@ -250,7 +250,6 @@
 
         .city{
             position: relative;
-            /* top: 35px; */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -321,8 +320,6 @@
     width: 99.5%;
     height: 60px;
     padding: 20px 0px 0px 0px;
-    /* background-color: rgba(77, 98, 99, 0.12);
-    backdrop-filter: blur(1px); */
     color: white;
     display: flex;
     justify-content: space-between;
@@ -387,8 +384,6 @@
     gap: 5px;
     justify-content:center ;
     align-items: center;
-    /* background-color: rgba(77, 98, 99, 0.20);
-    backdrop-filter: blur(1px); */
     border-radius: 8px;
     
     & span::before{
@@ -469,14 +464,7 @@
                 text-transform: capitalize
             }
             }
-            /* & span:nth-child(2)::before{
-                content: ' ';
-                border: 1px solid gold;
-                position: absolute;
-                top: 2px;
-                bottom:3px;
-                left: -10px;                
-            } */
+        
             & span:nth-child(2)::after{
                 content: ' ';
                 border: 1px solid rgba(141, 141, 141, 0.445);
@@ -495,4 +483,5 @@
             background-color: rgba(77, 98, 99, 0.30);
         }
     }
+
 
