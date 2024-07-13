@@ -1,0 +1,90 @@
+/* Styles for Phones */
+
+@media (max-width: 480px) {
+    .main {
+        /* Add specific styles for phones here */
+    height: 100%;
+        
+    }
+
+    .left {
+        /* Add specific styles for phones here */
+        /* position: fixed; */
+        width: 100% !important;
+        
+        .left_content{
+            width: 96%;
+            height: 100dvh !important;
+            overflow: auto;
+            padding: 10px 5px 0px 10px !important;
+            /* padding-bottom: 50px !important; */
+            .today_highlights{
+                width: 100% !important;
+                 min-height: 100dvh !important;
+
+                .divone{
+                    flex-direction: column;
+                }
+                .divtwo{
+                    flex-direction: column;
+                }
+            }
+            & p{
+                display: none;
+            }
+        }
+        .left_content::before {
+           display: none;
+        }
+        .left_footer{
+            display: none;
+        }
+    }
+    .right {
+        /* Add specific styles for phones here */
+        width: 0%;
+        display: none;
+
+    }
+
+    .head {
+        /* Add specific styles for phones here */
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    
+
+        .search-box{
+            width: 90%;
+            padding: 5px;
+            justify-content: space-around;
+        }
+        .search-box input{
+          width: 70%;
+          font-size: 15px;
+          font-weight: 500;
+        }
+        .search-box i{
+            font-size: 18px;
+            /* left: 7px; */
+        }
+        .search-box button{
+
+        }
+        .date{
+            display: none;
+        }
+    }
+
+    .search-box {
+        /* Add specific styles for phones here */
+    }
+
+    .date {
+        /* Add specific styles for phones here */
+    }
+
+    .next_days_forecast {
+        /* Add specific styles for phones here */
+    }
+}

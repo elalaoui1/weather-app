@@ -11,6 +11,8 @@
   </div>
 </template>
 <script>
+   import {desiredDays} from '../../functions/desiredDays';
+
 export default {
   data() {
     return {
@@ -26,31 +28,13 @@ export default {
     },
 },
   methods: {
-    async desiredDays() {
-      this.dayDataTime = [];
-      try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${this.changecity}&appid=${this.apikey}`);
-        const data = await response.json();
-        
-        const desiredDayData = data.list.filter(entry => {
-          const entryDate = new Date(entry.dt * 1000); // Multiply by 1000 to convert seconds to milliseconds
-          const desiredDate = new Date(); 
-          // const desiredDate = new Date('2024-3-26'); 
-          return entryDate.toDateString() === desiredDate.toDateString();
-        });
+    desiredDays(){
+      desiredDays(this.apikey,this.changecity,(data)=>{
+        this.dayDataTime = data
 
-        const weatherInfo = desiredDayData.map(entry => ({
-          time: new Date(entry.dt * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), // Extract time (e.g., 6:00)
-          weatherType: entry.weather[0].main, // Extract weather type (e.g., Rain, Clouds)
-          temperature: (entry.main.temp - 273.15).toFixed(1) // Convert temperature to Celsius and round to one decimal place
-        }));
-
-        // Update dayDataTime with new weather info
-        this.dayDataTime = weatherInfo;
-      } catch (error) {
-        console.error('Error fetching weather data:', error);
-      }
+      })
     }
+
   },
   mounted() {
     this.desiredDays();
@@ -65,5 +49,17 @@ export default {
 </script>
 
 <style>
-
+.left_footer h6,.left_footer p{
+  animation: fall 0.5s ease-in-out;
+}
+@keyframes fall {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 </style>

@@ -3,7 +3,7 @@
   <div class="city">
         <h3>now</h3>
         <div class="degree">
-            <p>11°C</p>
+            <p>{{ data.temp }}</p>
             <i class="bi bi-cloud-drizzle"></i>
         </div>
         <p class="status">{{data.weather}}</p>
@@ -46,7 +46,7 @@ methods:{
     async fetchWeather() {
       currentWeather(this.apikey, this.changecity_1, (data) => {
         this.data = data;
-        console.log(this.data);
+        // console.log(this.data);
       });
     }
 },

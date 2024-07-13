@@ -29,7 +29,8 @@ export async function currentWeather(apikey, city, callback) {
                 humidity: data.main.humidity + "%", // Humidity in percentage
                 pressure: data.main.pressure + " hPa", // Pressure in hPa
                 visibility: (data.visibility / 1000) + " km", // Visibility in kilometers
-                feelsLike: (data.main.feels_like - 273.15).toFixed(2) + "°C",
+                feelsLike: (data.main.feels_like - 273.15).toFixed(0) + "°C",
+                temp: (data.main.temp - 273.15).toFixed(0) + "°C",
                 weather: data.weather[0].description
             };
             callback(weatherData);
@@ -38,3 +39,4 @@ export async function currentWeather(apikey, city, callback) {
             console.error('There was a problem with the fetch operation:', error);
         });
 }
+

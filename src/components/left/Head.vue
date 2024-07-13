@@ -25,6 +25,9 @@ data(){
     }
 },
 methods:{
+
+    
+
     ChangeCityName(){
         this.$store.dispatch('updateCityName',this.CityName);
         // this.CityName ='';
@@ -60,7 +63,7 @@ methods:{
 
 },
 mounted(){
-    
+    this.CityName= this.$store.getters.getCityName;
 }
 }
 </script>
